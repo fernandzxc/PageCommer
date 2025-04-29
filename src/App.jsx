@@ -9,7 +9,7 @@ const App = () => {
     <div>
       <div className="fixed w-full h-screen border-[16px] border-white"></div>
       <div className="img_block p-4 h-lvh">
-        <div className="bg-[url('./assets/img/Wallpaper.jpg')] bg-cover bg-center h-full">
+        <div className="bg-[url('./assets/img/Wallpaper2.jpg')] object-contain bg-cover bg-center h-full">
           <Header />
         </div>
       </div>
