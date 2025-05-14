@@ -23,7 +23,7 @@ const Header = () => {
             <BiMenu className="size-7" />
           </div>
           <h1 className="text-5xl absolute left-1/2 -translate-x-1/2 font-bold font-serif cursor-pointer">
-            PAGE E-COMMER
+            PAGE E-COMMERCE
           </h1>
           <MdOutlineShoppingBag className="size-6 cursor-pointer" />
         </div>
