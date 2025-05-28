@@ -31,8 +31,7 @@ const Header = () => {
             </div>
             <BiMenu className="size-7 cursor-pointer" onClick={toggleMenu} />
           </div>
-          <h1 className="text-5xl absolute left-1/2 -translate-x-1/2 font-bold font-serif cursor-pointer"></h1>
-          <MdOutlineShoppingBag className="size-6 cursor-pointer" />
+          <MdOutlineShoppingBag className={`size-6 cursor-pointer absolute ${openMenu ? "right-36": "right-2"}`} />
         </div>
       </header>
     </div>
