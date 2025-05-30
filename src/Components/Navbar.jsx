@@ -1,21 +1,21 @@
-import { TiHomeOutline } from "react-icons/ti";
+import { FcHome } from "react-icons/fc";
 import { IoShirtOutline } from "react-icons/io5";
-import { GrContact } from "react-icons/gr";
+import { FcContacts } from "react-icons/fc";
 
 const Navbar = () => {
   return (
-    <div className=" bg-[#ffffffa3] w-32 h-[calc(100vh-64px)] absolute top-0 right-0 z-50 rounded-l-lg p-5">
-      <ul className="">
-        <a href="" className="flex items-center gap-1"> 
-          <TiHomeOutline /> Inicio
+    <div className="absolute right-0 top-0 flex items-center bg-[#ffffff00] w-32 h-[calc(100vh-60px)] z-50 rounded-l-lg p-5 duration-700">
+      <ul className="flex flex-col gap-2">
+        <a href="" className="flex items-center gap-2 shadow-xl">
+          <FcHome className="size-5"/> <h5 className=" text-red-500">Inicio</h5>
         </a>
 
-        <a href="" className="flex items-center gap-1"> 
-          <IoShirtOutline /> Productos
+        <a href="" className="flex items-center gap-2">
+          <IoShirtOutline className="size-5" /> Productos
         </a>
 
-        <a href="" className="flex items-center gap-1"> 
-          <GrContact /> Contacto
+        <a href="" className="flex items-center gap-2">
+          <FcContacts className="size-5" /> Contacto
         </a>
       </ul>
     </div>

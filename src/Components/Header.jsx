@@ -13,8 +13,8 @@ const Header = () => {
 
   return (
     <div className="fixed w-[calc(100lvw-47.5px)] ">
-      <header className="w-full hover:bg-[#ffffffa3] duration-200">
-        <h1 className="bg-gray-400 text-white text-center p-1 opacity-85">
+      <header className={`${openMenu ? "": ""} hover:bg-[#ffffffa3] w-full duration-500`}>
+        <h1 className=" bg-gray-700 text-white text-center p-1 opacity-85">
           MONTO MÍNIMO DE COMPRA $100.000 - ENVÍOS A TODO EL PAÍS
         </h1>
         <div className="flex justify-between items-center px-2 py-6 relative">
@@ -31,7 +31,7 @@ const Header = () => {
             </div>
             <BiMenu className="size-7 cursor-pointer" onClick={toggleMenu} />
           </div>
-          <MdOutlineShoppingBag className={`size-6 cursor-pointer absolute ${openMenu ? "right-36": "right-2"}`} />
+          <MdOutlineShoppingBag className={`size-6 cursor-pointer absolute right-2`} />
         </div>
       </header>
     </div>
