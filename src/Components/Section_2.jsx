@@ -13,13 +13,13 @@ const Section_2 = () => {
             <h2 className="font-bold text-lg">$50.0</h2>
           </div>
         </a>
-        <div className="h-[90vh] shadow-xl">
+        <a className=" h-[90vh] shadow-xl">
           <div className="h-[70vh] bg-[url('./assets/img/Model-0.2.jpg')] bg-center bg-cover"></div>
           <div className="flex flex-col text-center gap-2 py-5">
             <h2 className="">BLUSA Black and White</h2>
             <h2 className="font-bold text-lg">$100.0</h2>
           </div>
-        </div>
+        </a>
         <div className="h-[90vh] shadow-xl">
           <div className="h-[70vh] bg-[url('./assets/img/Model-0.4.jpg')] bg-center bg-cover"></div>
           <div className="flex flex-col text-center gap-2 py-5">

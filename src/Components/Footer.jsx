@@ -13,14 +13,22 @@ const Footer = () => {
           <BsTwitterX className="z-10 size-5 cursor-pointer" />
         </div>
       </div>
-      
+
       <div>
         <h1 className="text-gray-300 text-lg pb-2">CATEGORIAS</h1>
         <div className="text-white flex flex-col gap-3">
-          <a href="#" className="z-10">Inicio</a>
-          <a href="#" className="z-10">Productos</a>
-          <a href="#" className="z-10">Contacto</a>
-          <a href="#" className="z-10">Preguntas Frecuentes</a>
+          <a href="#" className="z-10">
+            Inicio
+          </a>
+          <a href="#" className="z-10">
+            Productos
+          </a>
+          <a href="#" className="z-10">
+            Contacto
+          </a>
+          <a href="#" className="z-10">
+            Preguntas Frecuentes
+          </a>
         </div>
       </div>
 
