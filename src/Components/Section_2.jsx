@@ -1,19 +1,36 @@
+import { useState } from "react";
 
 const Section_2 = () => {
+  const [isHover, setIsHover] = useState(false);
+
+  const IsOpenHover = () => {
+    setIsHover(!isHover);
+  };
+
   return (
     <div className="p-9 ">
       <div className="text-center pb-11">
         <h1 className="text-4xl font-extrabold">SPRING SUMMER 2025</h1>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+      <div
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5"
+        onMouseEnter={() => IsOpenHover(true)}
+        onMouseLeave={() => IsOpenHover(false)}
+      >
         <a href="#" className="z-10 shadow-xl">
-          <div className="bg-[url('./assets/img/Model-0.jpg')] bg-cover bg-center aspect-[3/4]"></div>
+          <div
+            className={`${
+              isHover
+                ? "bg-[url('./assets/img/Model-0.2.jpg')]"
+                : "bg-[url('./assets/img/Model-0.jpg')]"
+            } bg-cover bg-center aspect-[3/4] duration-300`}
+          ></div>
           <div className="flex flex-col text-center gap-2 py-5">
             <h2 className="">BLUSA NEW SONIA</h2>
             <h2 className="font-bold text-lg">$50.0</h2>
           </div>
         </a>
-        <a className=" h-[90vh] shadow-xl">
+        <a className="h-[90vh] shadow-xl">
           <div className="h-[70vh] bg-[url('./assets/img/Model-0.2.jpg')] bg-center bg-cover"></div>
           <div className="flex flex-col text-center gap-2 py-5">
             <h2 className="">BLUSA Black and White</h2>
