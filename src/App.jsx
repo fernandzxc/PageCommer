@@ -8,7 +8,7 @@ import "./assets/css/estilo.css";
 const App = () => {
   return (
     <div className="flex flex-col min-h-screen">
-      <div className="fixed w-full h-screen border-t-[16px] border-white overflow-hidden z-30"></div>
+      <div className="fixed w-full h-screen border-t-[16px] border-white z-15"></div>
       <div className="img_block p-4 h-lvh">
         <div className="bg-[url('./assets/img/Wallpaper2.jpg')] object-contain bg-cover bg-center h-full">
           <Header />
