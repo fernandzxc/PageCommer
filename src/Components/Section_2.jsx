@@ -39,21 +39,21 @@ const Section_2 = () => {
         <h1 className="text-4xl font-extrabold">SPRING SUMMER 2025</h1>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-        <a href="#" className="z-10 shadow-xl">
+        <a href="#" className="shadow-xl">
           <HoverImg normalImg={model15} hover={model151} />
           <div className="flex flex-col text-center gap-2 py-5">
             <h2 className="">BLUSA NEW SONIA</h2>
             <h2 className="font-bold text-lg">$50.0</h2>
           </div>
         </a>
-        <a href="#" className="z-10 shadow-xl">
+        <a href="#" className="shadow-xl">
           <HoverImg normalImg={model14} hover={model141} />
           <div className="flex flex-col text-center gap-2 py-5">
             <h2 className="">BLUSA Black and White</h2>
             <h2 className="font-bold text-lg">$100.0</h2>
           </div>
         </a>
-        <a href="#" className="z-10 shadow-xl">
+        <a href="#" className="shadow-xl">
           <HoverImg normalImg={model13} hover={model131} />
 
           <div className="flex flex-col text-center gap-2 py-5">
@@ -61,49 +61,49 @@ const Section_2 = () => {
             <h2 className="font-bold text-lg">$5000.0</h2>
           </div>
         </a>
-        <a href="#" className="z-10 shadow-xl">
+        <a href="#" className="shadow-xl">
           <HoverImg normalImg={model12} hover={model121} />
           <div className="flex flex-col text-center gap-2 py-5">
             <h2 className="">T-SHIRT WHITE</h2>
             <h2 className="font-bold text-lg">$240.0</h2>
           </div>
         </a>
-        <a href="#" className="z-10 shadow-xl">
+        <a href="#" className="shadow-xl">
           <HoverImg normalImg={model16} hover={model161} />
           <div className="flex flex-col text-center gap-2 py-5">
             <h2 className="">T-SHIRT BLACK</h2>
             <h2 className="font-bold text-lg">$240.0</h2>
           </div>
         </a>
-        <a href="#" className="z-10 shadow-xl">
+        <a href="#" className="shadow-xl">
           <HoverImg normalImg={model10} hover={model101} />
           <div className="flex flex-col text-center gap-2 py-5">
             <h2 className="">T-SHIRT BROWN</h2>
             <h2 className="font-bold text-lg">$240.0</h2>
           </div>
         </a>
-        <a href="#" className="z-10 shadow-xl">
+        <a href="#" className="shadow-xl">
           <HoverImg normalImg={model9} hover={model91} />
           <div className="flex flex-col text-center gap-2 py-5">
             <h2 className="">T-SHIRT WHITE</h2>
             <h2 className="font-bold text-lg">$240.0</h2>
           </div>
         </a>
-        <a href="#" className="z-10 shadow-xl">
+        <a href="#" className="shadow-xl">
           <HoverImg normalImg={model8} hover={model81} />
           <div className="flex flex-col text-center gap-2 py-5">
             <h2 className="">T-SHIRT GREEN</h2>
             <h2 className="font-bold text-lg">$240.0</h2>
           </div>
         </a>
-        <a href="#" className="z-10 shadow-xl">
+        <a href="#" className="shadow-xl">
           <HoverImg normalImg={model7} hover={model71} />
           <div className="flex flex-col text-center gap-2 py-5">
             <h2 className="">T-SHIRT WHITE AND BLACK</h2>
             <h2 className="font-bold text-lg">$240.0</h2>
           </div>
         </a>
-        <a href="#" className="z-10 shadow-xl">
+        <a href="#" className="shadow-xl">
           <HoverImg normalImg={model6} hover={model61} />
 
           <div className="flex flex-col text-center gap-2 py-5">
@@ -111,7 +111,7 @@ const Section_2 = () => {
             <h2 className="font-bold text-lg">$240.0</h2>
           </div>
         </a>
-        <a href="#" className="z-10 shadow-xl">
+        <a href="#" className="shadow-xl">
           <HoverImg normalImg={model5} hover={model51} />
 
           <div className="flex flex-col text-center gap-2 py-5">
@@ -119,28 +119,28 @@ const Section_2 = () => {
             <h2 className="font-bold text-lg">$240.0</h2>
           </div>
         </a>
-        <a href="#" className="z-10 shadow-xl">
+        <a href="#" className="shadow-xl">
           <HoverImg normalImg={model4} hover={model41} />
           <div className="flex flex-col text-center gap-2 py-5">
             <h2 className="">DRESS GREY</h2>
             <h2 className="font-bold text-lg">$240.0</h2>
           </div>
         </a>
-        <a href="#" className="z-10 shadow-xl">
+        <a href="#" className="shadow-xl">
           <HoverImg normalImg={model3} hover={model31} />
           <div className="flex flex-col text-center gap-2 py-5">
             <h2 className="">T-SHIRT WHITE AND BLACK</h2>
             <h2 className="font-bold text-lg">$240.0</h2>
           </div>
         </a>
-        <a href="#" className="z-10 shadow-xl">
+        <a href="#" className="shadow-xl">
           <HoverImg normalImg={model1} hover={model11} />
           <div className="flex flex-col text-center gap-2 py-5">
             <h2 className="">BLOUSE BLACK</h2>
             <h2 className="font-bold text-lg">$240.0</h2>
           </div>
         </a>
-        <a href="#" className="z-10 shadow-xl">
+        <a href="#" className="shadow-xl">
           <HoverImg normalImg={model04} hover={model05} />
 
           <div className="flex flex-col text-center gap-2 py-5">
@@ -148,7 +148,7 @@ const Section_2 = () => {
             <h2 className="font-bold text-lg">$240.0</h2>
           </div>
         </a>
-        <a href="#" className="z-10 shadow-xl">
+        <a href="#" className="shadow-xl">
           <HoverImg normalImg={model2} hover={model21} />
 
           <div className="flex flex-col text-center gap-2 py-5">
