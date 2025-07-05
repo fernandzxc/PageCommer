@@ -4,7 +4,7 @@ import { MdOutlineShoppingBag } from "react-icons/md";
 
 const Header = () => {
   return (
-    <div className="fixed w-[calc(100lvw-47.5px)]">
+    <div className="fixed w-full">
       <header className=" hover:bg-[#ffffffa3] w-full duration-500">
         <h1 className=" bg-gray-700 text-white text-center p-1 opacity-85">
           MONTO MÍNIMO DE COMPRA $100.000 - ENVÍOS A TODO EL PAÍS

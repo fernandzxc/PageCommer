@@ -8,15 +8,15 @@ import "./assets/css/estilo.css";
 const App = () => {
   return (
     <div className="flex flex-col min-h-screen">
-      <div className="fixed w-full h-screen border-t-[16px] border-white"></div>
-      <div className="img_block p-4 h-lvh">
+      <div className="img_block h-lvh">
         <div className="bg-[url('./assets/img/Wallpaper2.jpg')] object-contain bg-cover bg-center h-full">
           <Header />
         </div>
       </div>
       <Section_1 />
-      <Section_2 /> 
-      <Footer/>
+      <Section_2 />
+
+      <Footer />
     </div>
   );
 };

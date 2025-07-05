@@ -39,7 +39,7 @@ const Section_2 = () => {
         <h1 className="text-4xl font-extrabold">SPRING SUMMER 2025</h1>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-        <a href="#" className="shadow-xl">
+        <a href="#" className="shadow-xl block">
           <HoverImg normalImg={model15} hover={model151} />
           <div className="flex flex-col text-center gap-2 py-5">
             <h2 className="">BLUSA NEW SONIA</h2>
