@@ -8,25 +8,25 @@ const Footer = () => {
       <div>
         <h1 className="text-lg text-gray-300 pb-2">REDES SOCIALES</h1>
         <div className="flex gap-5">
-          <FaFacebook className="z-10 size-5 cursor-pointer text-[#1877F2]" />
-          <GrInstagram className="z-10 size-5 cursor-pointer text-fuchsia-600" />
-          <BsTwitterX className="z-10 size-5 cursor-pointer" />
+          <FaFacebook className="size-5 cursor-pointer text-[#1877F2]" />
+          <GrInstagram className="size-5 cursor-pointer text-fuchsia-600" />
+          <BsTwitterX className="size-5 cursor-pointer" />
         </div>
       </div>
 
       <div>
         <h1 className="text-gray-300 text-lg pb-2">CATEGORIAS</h1>
         <div className="text-white flex flex-col gap-3">
-          <a href="#" className="z-10">
+          <a href="#" >
             Inicio
           </a>
-          <a href="#" className="z-10">
+          <a href="#" >
             Productos
           </a>
-          <a href="#" className="z-10">
+          <a href="#" >
             Contacto
           </a>
-          <a href="#" className="z-10">
+          <a href="#" >
             Preguntas Frecuentes
           </a>
         </div>

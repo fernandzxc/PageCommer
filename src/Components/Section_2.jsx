@@ -31,6 +31,7 @@ import model04 from "/src/assets/img/Model-0.4.jpg";
 import model05 from "/src/assets/img/Model-0.5.jpg";
 import model2 from "/src/assets/img/Model-2.jpg";
 import model21 from "/src/assets/img/Model-2.1.jpg";
+import Products from "./Products";
 
 const Section_2 = () => {
   return (
@@ -39,7 +40,7 @@ const Section_2 = () => {
         <h1 className="text-4xl font-extrabold">SPRING SUMMER 2025</h1>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-        <a href="#" className="shadow-xl block">
+        <a href="/Products" className="shadow-xl block">
           <HoverImg normalImg={model15} hover={model151} />
           <div className="flex flex-col text-center gap-2 py-5">
             <h2 className="">BLUSA NEW SONIA</h2>
