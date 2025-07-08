@@ -32,6 +32,7 @@ import model05 from "/src/assets/img/Model-0.5.jpg";
 import model2 from "/src/assets/img/Model-2.jpg";
 import model21 from "/src/assets/img/Model-2.1.jpg";
 import Products from "./Products";
+import { Link } from "react-router-dom";
 
 const Section_2 = () => {
   return (
@@ -40,13 +41,13 @@ const Section_2 = () => {
         <h1 className="text-4xl font-extrabold">SPRING SUMMER 2025</h1>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-        <a href="/Products" className="shadow-xl block">
+        <Link to='Products' >
           <HoverImg normalImg={model15} hover={model151} />
           <div className="flex flex-col text-center gap-2 py-5">
             <h2 className="">BLUSA NEW SONIA</h2>
             <h2 className="font-bold text-lg">$50.0</h2>
           </div>
-        </a>
+        </Link>
         <a href="#" className="shadow-xl">
           <HoverImg normalImg={model14} hover={model141} />
           <div className="flex flex-col text-center gap-2 py-5">
