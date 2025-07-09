@@ -1,6 +1,7 @@
 import { BiMenu } from "react-icons/bi";
 import { CiSearch } from "react-icons/ci";
 import { MdOutlineShoppingBag } from "react-icons/md";
+import {Link} from "react-router-dom" 
 
 const Header = () => {
   return (
@@ -12,7 +13,7 @@ const Header = () => {
         <div className="flex justify-between items-center px-2 py-6 relative">
           <div className="flex flex-row-reverse gap-4">
             <div className="flex gap-5 ">
-              <a href="#" className="text-slate-400 hover:text-black">Inicio</a>
+              <Link to='/' className="text-slate-400 hover:text-black">Inicio</Link>
               <a href="#" className="text-slate-400 hover:text-black">Productos</a>
               <a href="#" className="text-slate-400 hover:text-black">Contacto</a>
             </div>

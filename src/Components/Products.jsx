@@ -1,5 +1,16 @@
+import Header from "./Header";
+
 const Products = () => {
-  return <div>Hola munod</div>;
+  return (
+    <div>
+      <header>
+        <Header />
+      </header>
+      <body>
+        
+      </body>
+    </div>
+  );
 };
 
 export default Products;
