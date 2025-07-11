@@ -63,24 +63,22 @@ const ProductsDetail = () => {
 
   return (
     <div>
-      <header className="relative">
-        <Header />
-      </header>
+      <Header />
 
-      <main className="flex relative justify-between">
-        <figure className="w-1/6">
+      <main className="flex pt-28 justify-between">
+        <figure className="w-[12%] gap-4 flex flex-col">
           <img src={model161} />
           <img src={model161} />
         </figure>
         <figure className="object-cover w-1/3">
           <img src={model16} />
         </figure>
-        <div>
-          <h1>{product.name}</h1>
-          <h2>{product.price}</h2>
+        <div >
+          <h1 className="text-lg">{product.name}</h1>
+          <h2 className="text-base">${product.price}</h2>
           <p>Talla</p>
           <p>Descripcion</p>
-          <button>Agregar al carrito</button>
+          <button className="w-48 bg-red-500 text-base px- py-1">Agregar al carrito</button>
         </div>
       </main>
     </div>
