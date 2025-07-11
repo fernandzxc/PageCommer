@@ -5,7 +5,7 @@ import {Link} from "react-router-dom"
 
 const Header = () => {
   return (
-    <div className="fixed w-full">
+    <div className="fixed w-full z-10">
       <header className=" hover:bg-[#ffffffa3] w-full duration-500">
         <h1 className=" bg-gray-700 text-white text-center p-1 opacity-85">
           MONTO MÍNIMO DE COMPRA $100.000 - ENVÍOS A TODO EL PAÍS

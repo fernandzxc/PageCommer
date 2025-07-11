@@ -11,15 +11,14 @@ const Products = ({ nombre, id, precio, hover, normalImg }) => {
       className="shadow-xl"
     >
       <Link to={`/ProductsDetail/${id}`}>
-        <div
+        <figure
           className="bg-cover bg-center aspect-[3/4] duration-300 transition-all"
           style={{
             backgroundImage: isHover ? `url(${hover})` : `url(${normalImg})`,
           }}
-        ></div>
+        ></figure>
         <div className="flex flex-col text-center gap-2 py-5">
           <h2>{nombre}</h2>
-          {/* BLUSA NEW SONIA */}
           <h2 className="font-bold text-lg">{precio}</h2>
         </div>
       </Link>
