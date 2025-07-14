@@ -5,5 +5,8 @@
     
 }
 
-
+.recorte {
+    clip-path: inset(10% 0 0 0);
+    transform: translateY(-10%);
+}
 

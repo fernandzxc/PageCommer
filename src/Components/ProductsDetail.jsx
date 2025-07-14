@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import Header from "./Header";
+import "../assets/css/estilo.css";
 import model16 from "/src/assets/img/Model-16.jpg";
 import model161 from "/src/assets/img/Model-16.1.jpg";
 import model15 from "/src/assets/img/Model-15.jpg";
@@ -38,21 +39,21 @@ const productData = {
     name: "BLUSA NEW SONIA",
     price: 50.0,
     description: "Blusa de alta calidad con diseño moderno.",
-    sizes: ["S", "M", "L"],
+    color: ["Negro", "Beige", "Blanco"],
     details: "100% algodón, lavable a máquina",
   },
   2: {
     name: "VESTIDO ELEGANTE",
     price: 75.0,
     description: "Vestido elegante para ocasiones especiales.",
-    sizes: ["XS", "S", "M"],
+    color: ["NegroS", "Rojo", "M"],
     details: "Poliester y elastano, lavado en seco recomendado",
   },
   3: {
     name: "FALDA MODERNA",
     price: 45.0,
     description: "Falda ajustada con corte moderno.",
-    sizes: ["S", "M"],
+    color: ["Negro", "M"],
     details: "Mezcla de lino, lavable a máquina",
   },
 };
@@ -65,20 +66,37 @@ const ProductsDetail = () => {
     <div>
       <Header />
 
-      <main className="flex pt-28 justify-between">
+      <main className="flex pt-28 justify-between p-9">
         <figure className="w-[12%] gap-4 flex flex-col">
-          <img src={model161} />
+          <img src={model16} />
           <img src={model161} />
         </figure>
-        <figure className="object-cover w-1/3">
+        <figure className="object-cover recorte w-1/2">
           <img src={model16} />
         </figure>
-        <div >
+        <div className="w-1/3 flex flex-col gap-4">
           <h1 className="text-lg">{product.name}</h1>
           <h2 className="text-base">${product.price}</h2>
-          <p>Talla</p>
-          <p>Descripcion</p>
-          <button className="w-48 bg-red-500 text-base px- py-1">Agregar al carrito</button>
+          <div className="flex flex-row gap-2">
+            <p>Color</p>
+            <button className="border-2 border-black hover:bg-gray-400 text-sm py-1 px-3 rounded-sm ">
+              {product.color[0]}
+            </button>
+            <button className="border-2 border-black hover:bg-gray-400 text-sm py-1 px-3 rounded-sm ">
+              {product.color[1]}
+            </button>
+            <button className="border-2 border-black hover:bg-gray-400 text-sm py-1 px-3 rounded-sm ">
+              {product.color[2]}
+            </button>
+          </div>
+          <div>
+            <p>Descripcion</p>
+            <p>Coleccion Otoño Invierno 2025</p>
+            <p>{product.description} Talla Unica</p>
+          </div>
+          <button className="w-full py-2 bg-black text-white hover:bg-gray-700 rounded-md text-base">
+            Agregar al carrito
+          </button>
         </div>
       </main>
     </div>
