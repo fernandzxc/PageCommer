@@ -39,6 +39,8 @@ const productData = {
     name: "BLUSA NEW SONIA",
     price: 50.0,
     description: "Blusa de alta calidad con diseño moderno.",
+    HoverImage: model161,
+    NormalImage: model16,
     color: ["Negro", "Beige", "Blanco"],
     details: "100% algodón, lavable a máquina",
   },
@@ -46,16 +48,138 @@ const productData = {
     name: "VESTIDO ELEGANTE",
     price: 75.0,
     description: "Vestido elegante para ocasiones especiales.",
-    color: ["NegroS", "Rojo", "M"],
+    HoverImage: model151,
+    NormalImage: model15,
+    color: ["NegroS", "Rojo", "Gris"],
     details: "Poliester y elastano, lavado en seco recomendado",
   },
   3: {
     name: "FALDA MODERNA",
     price: 45.0,
     description: "Falda ajustada con corte moderno.",
-    color: ["Negro", "M"],
+    HoverImage: model141,
+    NormalImage: model14,
+    color: ["Negro", "Blanco"],
     details: "Mezcla de lino, lavable a máquina",
   },
+  4: {
+    name: "BLUSA NEW SONIA",
+    price: 50.0,
+    description: "Blusa de alta calidad con diseño moderno.",
+    HoverImage: model131,
+    NormalImage: model13,
+    color: ["Negro", "Marron", "Blanco", "Gris"],
+    details: "100% algodón, lavable a máquina",
+  },
+  5: {
+    name: "VESTIDO ELEGANTE",
+    price: 75.0,
+    description: "Vestido elegante para ocasiones especiales.",
+    HoverImage: model121,
+    NormalImage: model12,
+    color: ["Negro", "Marron", "Blanco", "Gris"],
+    details: "Poliester y elastano, lavado en seco recomendado",
+  },
+  6: {
+    name: "FALDA MODERNA",
+    price: 45.0,
+    description: "Falda ajustada con corte moderno.",
+    HoverImage: model101,
+    NormalImage: model10,
+    color: ["Negro", "Blanco", "Gris"],
+    details: "Mezcla de lino, lavable a máquina",
+  },
+  7: {
+    name: "BLUSA NEW SONIA",
+    price: 50.0,
+    description: "Blusa de alta calidad con diseño moderno.",
+    HoverImage: model91,
+    NormalImage: model9,
+    color: ["Negro", "Beige", "Blanco"],
+    details: "100% algodón, lavable a máquina",
+  },
+  8: {
+    name: "VESTIDO ELEGANTE",
+    price: 75.0,
+    description: "Vestido elegante para ocasiones especiales.",
+    HoverImage: model81,
+    NormalImage: model8,
+    color: ["Negro", "Blanco", "Beige"],
+    details: "Poliester y elastano, lavado en seco recomendado",
+  },
+  9: {
+    name: "FALDA MODERNA",
+    price: 45.0,
+    description: "Falda ajustada con corte moderno.",
+    HoverImage: model71,
+    NormalImage: model7,
+    color: ["Negro", "Blanco", "Gris"],
+    details: "Mezcla de lino, lavable a máquina",
+  },
+  10: {
+    name: "BLUSA NEW SONIA",
+    price: 50.0,
+    description: "Blusa de alta calidad con diseño moderno.",
+    HoverImage: model61,
+    NormalImage: model6,
+    color: ["Negro", "Beige", "Blanco"],
+    details: "100% algodón, lavable a máquina",
+  },
+  11: {
+    name: "VESTIDO ELEGANTE",
+    price: 75.0,
+    description: "Vestido elegante para ocasiones especiales.",
+    HoverImage: model51,
+    NormalImage: model5,
+    color: ["NegroS", "Rojo", "Gris"],
+    details: "Poliester y elastano, lavado en seco recomendado",
+  },
+  12: {
+    name: "FALDA MODERNA",
+    price: 45.0,
+    description: "Falda ajustada con corte moderno.",
+    HoverImage: model41,
+    NormalImage: model4,
+    color: ["Negro", "Blanco", "Gris"],
+    details: "Mezcla de lino, lavable a máquina",
+  },
+  13: {
+    name: "BLUSA NEW SONIA",
+    price: 50.0,
+    description: "Blusa de alta calidad con diseño moderno.",
+    HoverImage: model31,
+    NormalImage: model3,
+    color: ["Negro", "Blanco"],
+    details: "100% algodón, lavable a máquina",
+  },
+  14: {
+    name: "VESTIDO ELEGANTE",
+    price: 75.0,
+    description: "Vestido elegante para ocasiones especiales.",
+    HoverImage: model11,
+    NormalImage: model1,
+    color: ["Negro", "Blanco", "Gris"],
+    details: "Poliester y elastano, lavado en seco recomendado",
+  },
+  15: {
+    name: "FALDA MODERNA",
+    price: 45.0,
+    description: "Falda ajustada con corte moderno.",
+    HoverImage: model05,
+    NormalImage: model04,
+    color: ["Negro", "Beige", "Blanco"],
+    details: "Mezcla de lino, lavable a máquina",
+  },
+  16: {
+    name: "FALDA MODERNA",
+    price: 45.0,
+    description: "Falda ajustada con corte moderno.",
+    HoverImage: model21,
+    NormalImage: model2,
+    color: ["Negro", "Verde", "Blanco"],
+    details: "Mezcla de lino, lavable a máquina",
+  },
+  
 };
 
 const ProductsDetail = () => {
@@ -68,11 +192,11 @@ const ProductsDetail = () => {
 
       <main className="flex pt-28 justify-between p-9">
         <figure className="w-[12%] gap-4 flex flex-col">
-          <img src={model16} />
-          <img src={model161} />
+          <img src={product.NormalImage} />
+          <img src={product.HoverImage} />
         </figure>
-        <figure className="object-cover recorte w-1/2">
-          <img src={model16} />
+        <figure className="object-cover w-1/2">
+          <img src={product.NormalImage} />
         </figure>
         <div className="w-1/3 flex flex-col gap-4">
           <h1 className="text-lg">{product.name}</h1>
