@@ -1,5 +1,8 @@
 import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Header from "./Header";
+import Products from "./Products";
+import Footer from "./Footer";
 import "../assets/css/estilo.css";
 import model16 from "/src/assets/img/Model-16.jpg";
 import model161 from "/src/assets/img/Model-16.1.jpg";
@@ -50,7 +53,7 @@ const productData = {
     description: "Vestido elegante para ocasiones especiales.",
     HoverImage: model151,
     NormalImage: model15,
-    color: ["NegroS", "Rojo", "Gris"],
+    color: ["Negro", "Rojo", "Gris"],
     details: "Poliester y elastano, lavado en seco recomendado",
   },
   3: {
@@ -131,7 +134,7 @@ const productData = {
     description: "Vestido elegante para ocasiones especiales.",
     HoverImage: model51,
     NormalImage: model5,
-    color: ["NegroS", "Rojo", "Gris"],
+    color: ["Negro", "Rojo", "Gris"],
     details: "Poliester y elastano, lavado en seco recomendado",
   },
   12: {
@@ -179,17 +182,28 @@ const productData = {
     color: ["Negro", "Verde", "Blanco"],
     details: "Mezcla de lino, lavable a máquina",
   },
-  
 };
 
 const ProductsDetail = () => {
   const { id } = useParams();
   const product = productData[id];
+  const [randomProducts, setRandomProducts] = useState([]);
+
+  const getRandomProducts = () => {
+    const allIds = Object.keys(productData);
+
+    const aletoryIds = [...allIds].sort(() => Math.random() - 0.5);
+
+    return aletoryIds.slice(0,4);
+  }
+
+  useEffect(() => {
+    setRandomProducts(getRandomProducts());
+  }, []);
 
   return (
     <div>
       <Header />
-
       <main className="flex pt-28 justify-between p-9">
         <figure className="w-[12%] gap-4 flex flex-col">
           <img src={product.NormalImage} />
@@ -201,28 +215,47 @@ const ProductsDetail = () => {
         <div className="w-1/3 flex flex-col gap-4">
           <h1 className="text-lg">{product.name}</h1>
           <h2 className="text-base">${product.price}</h2>
+          <hr className="border-gray-600" />
           <div className="flex flex-row gap-2">
             <p>Color</p>
-            <button className="border-2 border-black hover:bg-gray-400 text-sm py-1 px-3 rounded-sm ">
+            <button className="border-2 border-black hover:bg-gray-400 text-xs py-[2px] px-3 rounded-sm ">
               {product.color[0]}
             </button>
-            <button className="border-2 border-black hover:bg-gray-400 text-sm py-1 px-3 rounded-sm ">
+            <button className="border-2 border-black hover:bg-gray-400 text-xs py-[2px] px-3 rounded-sm ">
               {product.color[1]}
             </button>
-            <button className="border-2 border-black hover:bg-gray-400 text-sm py-1 px-3 rounded-sm ">
+            <button className="border-2 border-black hover:bg-gray-400 text-xs py-[2px] px-3 rounded-sm ">
               {product.color[2]}
             </button>
           </div>
           <div>
             <p>Descripcion</p>
-            <p>Coleccion Otoño Invierno 2025</p>
-            <p>{product.description} Talla Unica</p>
+            <section className="text-sm py-2">
+              <strong>Coleccion Otoño Invierno 2025</strong>
+              <p>{product.description} Talla Unica</p>
+            </section>
           </div>
           <button className="w-full py-2 bg-black text-white hover:bg-gray-700 rounded-md text-base">
             Agregar al carrito
           </button>
         </div>
       </main>
+      <div className="flex flex-col w-full items-center py-8 gap-8">
+        <h1 className="text-2xl">Productos Similares</h1>
+        <figure className="grid grid-rows-1 md:grid-cols-4 sm:grid-cols-2 w-9/12 gap-5">
+          {randomProducts.map((id) => (
+            <Products
+              key={id}
+              nombre={productData[id].name}
+              id={id}
+              precio={`$${productData[id].price}`}
+              hover={productData[id].HoverImage}
+              normalImg={productData[id].NormalImage}
+            />  
+          ))}
+        </figure>
+      </div>
+      <Footer />
     </div>
   );
 };
