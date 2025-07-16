@@ -14,8 +14,8 @@ const Header = () => {
           <div className="flex flex-row-reverse gap-4">
             <div className="flex gap-5 ">
               <Link to='/' className="text-slate-400 hover:text-black">Inicio</Link>
-              <a href="#" className="text-slate-400 hover:text-black">Productos</a>
-              <a href="#" className="text-slate-400 hover:text-black">Quienes Somos</a>
+              <Link to='/AllProducts' className="text-slate-400 hover:text-black">Productos</Link>
+              <Link to='/Contact' className="text-slate-400 hover:text-black">Quienes Somos</Link>
             </div>
             <div className="border-black border rounded-2xl flex justify-between">
               <input

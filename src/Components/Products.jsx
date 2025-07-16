@@ -12,7 +12,7 @@ const Products = ({ nombre, id, precio, hover, normalImg }) => {
     >
       <Link to={`/ProductsDetail/${id}`} onClick={() => window.scrollTo(0, 0)}>
         <figure
-          className="bg-cover aspect-[3/4] duration-300 transition-all"
+          className="bg-cover aspect-[3/4] duration-300"
           style={{
             backgroundImage: isHover ? `url(${hover})` : `url(${normalImg})`,
           }}
