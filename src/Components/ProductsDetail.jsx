@@ -344,12 +344,11 @@ const ProductsDetail = () => {
   const { id } = useParams();
   const product = productData[id];
   const [randomProducts, setRandomProducts] = useState([]);
+  const [mainImg, setMainImg] = useState(product);
 
   const getRandomProducts = () => {
     const allIds = Object.keys(productData);
-
     const aletoryIds = [...allIds].sort(() => Math.random() - 0.5);
-
     return aletoryIds.slice(0,4);
   }
 
@@ -362,11 +361,18 @@ const ProductsDetail = () => {
       <Header />
       <main className="flex pt-28 justify-between p-9">
         <figure className="w-[12%] gap-4 flex flex-col">
-          <img src={product.NormalImage} />
-          <img src={product.HoverImage} />
+          {Object.values(product).map((image) => (
+            <button 
+            key={image.id}
+            onClick={() => setMainImg(image)}
+            >
+              <img src={image.HoverImage} />
+              <img src={image.NormalImage} />
+            </button>
+          ))}
         </figure>
         <figure className="object-cover w-1/2">
-          <img src={product.NormalImage} />
+          <img src={mainImg.NormalImage} />
         </figure>
         <div className="w-1/3 flex flex-col gap-4">
           <h1 className="text-lg">{product.name}</h1>
