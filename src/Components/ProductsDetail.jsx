@@ -65,7 +65,6 @@ import Products from "./Products";
 import Footer from "./Footer";
 import "../assets/css/estilo.css";
 
-
 const productData = {
   1: {
     name: "BLUSA NEW SONIA",
@@ -337,20 +336,19 @@ const productData = {
     color: ["Negro", "Verde", "Blanco"],
     details: "Mezcla de lino, lavable a máquina",
   },
-  
 };
 
 const ProductsDetail = () => {
   const { id } = useParams();
   const product = productData[id];
   const [randomProducts, setRandomProducts] = useState([]);
-  const [mainImg, setMainImg] = useState(product);
+  const [mainImg, setMainImg] = useState(productData.NormalImage);
 
   const getRandomProducts = () => {
     const allIds = Object.keys(productData);
     const aletoryIds = [...allIds].sort(() => Math.random() - 0.5);
-    return aletoryIds.slice(0,4);
-  }
+    return aletoryIds.slice(0, 4);
+  };
 
   useEffect(() => {
     setRandomProducts(getRandomProducts());
@@ -360,19 +358,22 @@ const ProductsDetail = () => {
     <div>
       <Header />
       <main className="flex pt-28 justify-between p-9">
-        <figure className="w-[12%] gap-4 flex flex-col">
-          {Object.values(product).map((image) => (
-            <button 
-            key={image.id}
-            onClick={() => setMainImg(image)}
-            >
-              <img src={image.HoverImage} />
-              <img src={image.NormalImage} />
-            </button>
-          ))}
+        <figure className="w-[12%]">
+          {Object.values(productData)
+            .filter((image) => image.NormalImage === product.NormalImage)
+            .map((image) => (
+              <div className="gap-5 flex flex-col" key={image.id}>
+                <button onClick={() => setMainImg(image.NormalImage)}>
+                  <img src={image.NormalImage} />
+                </button>
+                <button onClick={() => setMainImg(image.HoverImage)}>
+                  <img src={image.HoverImage} />
+                </button>
+              </div>
+            ))}
         </figure>
         <figure className="object-cover w-1/2">
-          <img src={mainImg.NormalImage} />
+          <img src={mainImg ? mainImg : product.NormalImage} />
         </figure>
         <div className="w-1/3 flex flex-col gap-4">
           <h1 className="text-lg">{product.name}</h1>
@@ -413,7 +414,7 @@ const ProductsDetail = () => {
               precio={`$${productData[id].price}`}
               hover={productData[id].HoverImage}
               normalImg={productData[id].NormalImage}
-            />  
+            />
           ))}
         </figure>
       </div>
