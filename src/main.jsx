@@ -6,12 +6,14 @@ import App from "./App.jsx";
 import "./index.css";
 import AllProducts from "./Components/AllProducts.jsx";
 import Contact from "./Components/Contact.jsx";
+import Admin from "./Components/Admin.jsx";
 
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
   { path: "/ProductsDetail/:id", element: <ProductsDetail /> },
   { path: "/AllProducts", element: <AllProducts /> },
   { path: "/Contact", element: <Contact /> },
+  { path: "/Admin", element: <Admin />}
 ]);
 
 createRoot(document.getElementById("root")).render(

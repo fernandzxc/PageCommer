@@ -15,6 +15,7 @@ const Header = () => {
             <div className="flex gap-5 ">
               <Link to='/' className="text-slate-400 hover:text-black">Inicio</Link>
               <Link to='/AllProducts' className="text-slate-400 hover:text-black">Productos</Link>
+              <Link to='/Admin' className="text-slate-400 hover:text-black">Admin</Link>
               <Link to='/Contact' className="text-slate-400 hover:text-black">Quienes Somos</Link>
             </div>
             <div className="border-black border rounded-2xl flex justify-between">
