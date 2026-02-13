@@ -350,6 +350,10 @@ const ProductsDetail = () => {
     return aletoryIds.slice(0, 4);
   };
 
+   useEffect(() => {
+    setMainImg(product.NormalImage);
+  }, [product]);
+
   useEffect(() => {
     setRandomProducts(getRandomProducts());
   }, []);
