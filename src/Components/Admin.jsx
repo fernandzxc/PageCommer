@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
 
 const Admin = () => {
-  // const [nombre, setNomre] = useState('')
-  // const [precio, setPrecio] = useState()
-  // const [img1, setImg1] = useState([])
-  // const [img2, setImg2] = useState([])
+  const [modal, setModal] = useState(false);
   const [productos, setProductos] = useState([]);
+  const [nuevoProducto, setNuevoProducto] = useState({
+    nombre: "",
+    precio: "",
+    img1: "",
+    img2: ""
+  });
 
   useEffect(() => {
     fetch("http://localhost:5000/productos")
@@ -19,13 +22,19 @@ const Admin = () => {
       });
   }, []);
 
+  const handleInputChange = (e) => {
+    const {name, value} = e.target;
+    setNuevoProducto({...nuevoProducto, [name]: value})
+  }
+
   return (
     <div className="flex flex-col gap-5">
       <header className="bg-gray-800 py-4 px-2 text-white">
         <h1 className="uppercase">Panel de Administracion</h1>
       </header>
 
-      <body className="flex flex-col justify-center px-5">
+      <body className="flex flex-col justify-center px-5 gap-4">
+        <button className="bg-blue-500 w-36 rounded-sm py-1 text-white ">Agregar Producto</button>
         <table className="border-spacing-2 border table-auto border-gray-600 caption-top">
           <thead className="bg-gray-100 ">
             <tr className="divide-x divide-gray-400 ">
@@ -45,9 +54,9 @@ const Admin = () => {
                 <th>{producto.precio}</th>
                 <th>{producto.img1}</th>
                 <th>{producto.img2}</th>
-                <th>
-                  <button>Eliminar</button>
-                  <button>Editar</button>
+                <th className="flex gap-2 justify-center text-white">
+                  <button className="bg-blue-500 px-2 rounded-sm">Editar</button>
+                  <button className="bg-red-500 px-2 rounded-sm">Eliminar</button>
                 </th>
               </tr>
               <tr className="divide-x divide-gray-400">
