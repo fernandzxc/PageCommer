@@ -27,6 +27,20 @@ const Admin = () => {
     setNuevoProducto({...nuevoProducto, [name]: value})
   }
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    try {
+      const response = fetch("http://localhost:5000/productos", {
+        method: "POST",
+        headers: {'content-type': 'application/json'},
+        body: JSON.stringify({...nuevoProducto, precio: parseFloat(nuevoProducto.precio)})
+      });
+      const productoCreado = response.json();
+      
+
+    }
+  }
+
   return (
     <div className="flex flex-col gap-5">
       <header className="bg-gray-800 py-4 px-2 text-white">
