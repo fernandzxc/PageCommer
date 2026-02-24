@@ -50,7 +50,7 @@ const Admin = () => {
 
   return (
     <div className="flex flex-col gap-5">
-      <header className="bg-gray-800 py-4 px-2 text-white">
+      <header className="bg-gray-800 py-4 px-2 text-white ">
         <h1 className="uppercase">Panel de Administracion</h1>
       </header>
 
@@ -63,8 +63,8 @@ const Admin = () => {
         </button>
 
         {Modal && (
-          <div className="fixed bg-opacity-30 bg-black z-50 w-full items-center flex justify-center">
-            <div className="bg-white rounded-lg shadow-xl w-full max-w-md mx-4 p-6">
+          <div className="bg-opacity-30 bg-black z-50 w-full h-full absolute flex justify-center items-center ">
+            <div className="bg-white rounded-lg shadow-xl w-full max-w-md mx-4 p-6 ">
               <h2 className="text-2xl font-bold pb-4">
                 Agregar un Nuevo Producto
               </h2>
@@ -103,6 +103,20 @@ const Admin = () => {
                       required
                     />
                   </div>
+                  <div className="flex gap-5 justify-around">
+                    <label>Imagen 2#</label>
+                    <input
+                      type="file"
+                      value={nuevoProducto.precio}
+                      onChange={handleInputChange}
+                      required
+                    />
+                  </div>
+                </div>
+                <div className="flex">
+                  <button className="" type="button" onClick={() => setModal(false)}>
+                    Cancelar
+                  </button>
                 </div>
               </form>
             </div>
