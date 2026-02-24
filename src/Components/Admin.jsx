@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 
 const Admin = () => {
-  const [modal, setModal] = useState(false);
+  const [Modal, setModal] = useState(false);
   const [productos, setProductos] = useState([]);
   const [nuevoProducto, setNuevoProducto] = useState({
     nombre: "",
     precio: "",
     img1: "",
-    img2: ""
+    img2: "",
   });
 
   useEffect(() => {
@@ -23,23 +23,30 @@ const Admin = () => {
   }, []);
 
   const handleInputChange = (e) => {
-    const {name, value} = e.target;
-    setNuevoProducto({...nuevoProducto, [name]: value})
-  }
+    const { name, value } = e.target;
+    setNuevoProducto({ ...nuevoProducto, [name]: value });
+  };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = fetch("http://localhost:5000/productos", {
+      const response = await fetch("http://localhost:5000/productos", {
         method: "POST",
-        headers: {'content-type': 'application/json'},
-        body: JSON.stringify({...nuevoProducto, precio: parseFloat(nuevoProducto.precio)})
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          ...nuevoProducto,
+          precio: parseFloat(nuevoProducto.precio),
+        }),
       });
-      const productoCreado = response.json();
-      
 
+      const productoCreado = await response.json();
+      setProductos([...productos, productoCreado]);
+      setModal(false);
+      setNuevoProducto({ nombre: "", precio: "", img1: "", img2: "" });
+    } catch (error) {
+      console.error("Error al crear el nuevo Producto: ", error);
     }
-  }
+  };
 
   return (
     <div className="flex flex-col gap-5">
@@ -48,7 +55,59 @@ const Admin = () => {
       </header>
 
       <body className="flex flex-col justify-center px-5 gap-4">
-        <button className="bg-blue-500 w-36 rounded-sm py-1 text-white ">Agregar Producto</button>
+        <button
+          className="bg-blue-500 w-36 rounded-sm py-1 text-white"
+          onClick={() => setModal(true)}
+        >
+          Agregar Producto
+        </button>
+
+        {Modal && (
+          <div className="fixed bg-opacity-30 bg-black z-50 w-full items-center flex justify-center">
+            <div className="bg-white rounded-lg shadow-xl w-full max-w-md mx-4 p-6">
+              <h2 className="text-2xl font-bold pb-4">
+                Agregar un Nuevo Producto
+              </h2>
+
+              <form onSubmit={handleSubmit}>
+                <div className="space-y-4">
+                  <div className="flex gap-5">
+                    <label>Nombre del Producto</label>
+                    <input
+                      type="text"
+                      name="nombre"
+                      value={nuevoProducto.nombre}
+                      onChange={handleInputChange}
+                      required
+                      className="px-2 py-1 border-black border-2 rounded-lg "
+                    />
+                  </div>
+                  <div className="flex gap-5 justify-around">
+                    <label>Precio</label>
+                    <input
+                      type="number"
+                      name="precio"
+                      step="0.01"
+                      value={nuevoProducto.precio}
+                      onChange={handleInputChange}
+                      required
+                      className="px-2 py-1 border-2 rounded-lg border-black "
+                    />
+                  </div>
+                  <div className="flex gap-5 justify-around">
+                    <label>Imagen 1#</label>
+                    <input
+                      type="file"
+                      value={nuevoProducto.precio}
+                      onChange={handleInputChange}
+                      required
+                    />
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        )}
         <table className="border-spacing-2 border table-auto border-gray-600 caption-top">
           <thead className="bg-gray-100 ">
             <tr className="divide-x divide-gray-400 ">
@@ -69,13 +128,15 @@ const Admin = () => {
                 <th>{producto.img1}</th>
                 <th>{producto.img2}</th>
                 <th className="flex gap-2 justify-center text-white">
-                  <button className="bg-blue-500 px-2 rounded-sm">Editar</button>
-                  <button className="bg-red-500 px-2 rounded-sm">Eliminar</button>
+                  <button className="bg-blue-500 px-2 rounded-sm">
+                    Editar
+                  </button>
+                  <button className="bg-red-500 px-2 rounded-sm">
+                    Eliminar
+                  </button>
                 </th>
               </tr>
-              <tr className="divide-x divide-gray-400">
-                
-              </tr>
+              <tr className="divide-x divide-gray-400"></tr>
             </tbody>
           ))}
         </table>
