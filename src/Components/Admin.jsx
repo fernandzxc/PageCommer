@@ -54,7 +54,71 @@ const Admin = () => {
         <h1 className="uppercase">Panel de Administracion</h1>
       </header>
 
-      <body className="flex flex-col justify-center px-5 gap-4">
+      {Modal && (
+        <div className="bg-opacity-30 bg-black z-50 w-screen h-full absolute flex justify-center items-center ">
+          <div className="bg-white rounded-lg shadow-xl w-full max-w-md mx-4 p-6 ">
+            <h2 className="text-2xl font-bold pb-4">
+              Agregar un Nuevo Producto
+            </h2>
+
+            <form onSubmit={handleSubmit}>
+              <div className="space-y-4">
+                <div className="flex gap-5 justify-between">
+                  <label>Nombre</label>
+                  <input
+                    type="text"
+                    name="nombre"
+                    value={nuevoProducto.nombre}
+                    onChange={handleInputChange}
+                    required
+                    className="px-2 py-1 border-black border-2 rounded-lg "
+                  />
+                </div>
+                <div className="flex gap-5 justify-between">
+                  <label>Precio</label>
+                  <input
+                    type="text"
+                    name="precio"
+                    value={nuevoProducto.precio}
+                    onChange={handleInputChange}
+                    required
+                    className="px-2 py-1 border-black border-2 rounded-lg"
+                  />
+                </div>
+                <div className="flex gap-5 justify-between">
+                  <label>Imagen #1</label>
+                  <input
+                    type="file"
+                    value={nuevoProducto.precio}
+                    onChange={handleInputChange}
+                    required
+                  />
+                </div>
+                <div className="flex gap-5 justify-between">
+                  <label>Imagen #2</label>
+                  <input
+                    type="file"
+                    value={nuevoProducto.precio}
+                    onChange={handleInputChange}
+                    required
+                  />
+                </div>
+              </div>
+              <div className="flex">
+                <button
+                  className="bg-red-700 py-1 px-3 text-white rounded-lg"
+                  type="button"
+                  onClick={() => setModal(false)}
+                >
+                  Cancelar
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
+      <body className="flex flex-col justify-center gap-4 px-4">
         <button
           className="bg-blue-500 w-36 rounded-sm py-1 text-white"
           onClick={() => setModal(true)}
@@ -62,66 +126,6 @@ const Admin = () => {
           Agregar Producto
         </button>
 
-        {Modal && (
-          <div className="bg-opacity-30 bg-black z-50 w-full h-full absolute flex justify-center items-center ">
-            <div className="bg-white rounded-lg shadow-xl w-full max-w-md mx-4 p-6 ">
-              <h2 className="text-2xl font-bold pb-4">
-                Agregar un Nuevo Producto
-              </h2>
-
-              <form onSubmit={handleSubmit}>
-                <div className="space-y-4">
-                  <div className="flex gap-5">
-                    <label>Nombre del Producto</label>
-                    <input
-                      type="text"
-                      name="nombre"
-                      value={nuevoProducto.nombre}
-                      onChange={handleInputChange}
-                      required
-                      className="px-2 py-1 border-black border-2 rounded-lg "
-                    />
-                  </div>
-                  <div className="flex gap-5 justify-around">
-                    <label>Precio</label>
-                    <input
-                      type="number"
-                      name="precio"
-                      step="0.01"
-                      value={nuevoProducto.precio}
-                      onChange={handleInputChange}
-                      required
-                      className="px-2 py-1 border-2 rounded-lg border-black "
-                    />
-                  </div>
-                  <div className="flex gap-5 justify-around">
-                    <label>Imagen 1#</label>
-                    <input
-                      type="file"
-                      value={nuevoProducto.precio}
-                      onChange={handleInputChange}
-                      required
-                    />
-                  </div>
-                  <div className="flex gap-5 justify-around">
-                    <label>Imagen 2#</label>
-                    <input
-                      type="file"
-                      value={nuevoProducto.precio}
-                      onChange={handleInputChange}
-                      required
-                    />
-                  </div>
-                </div>
-                <div className="flex">
-                  <button className="" type="button" onClick={() => setModal(false)}>
-                    Cancelar
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-        )}
         <table className="border-spacing-2 border table-auto border-gray-600 caption-top">
           <thead className="bg-gray-100 ">
             <tr className="divide-x divide-gray-400 ">
