@@ -89,7 +89,7 @@ const Admin = () => {
                   <label>Imagen #1</label>
                   <input
                     type="file"
-                    value={nuevoProducto.precio}
+                    value={nuevoProducto.img1}
                     onChange={handleInputChange}
                     required
                   />
@@ -98,13 +98,13 @@ const Admin = () => {
                   <label>Imagen #2</label>
                   <input
                     type="file"
-                    value={nuevoProducto.precio}
+                    value={nuevoProducto.img2}
                     onChange={handleInputChange}
                     required
                   />
                 </div>
               </div>
-              <div className="flex">
+              <div className="flex pt-8">
                 <button
                   className="bg-red-700 py-1 px-3 text-white rounded-lg"
                   type="button"
