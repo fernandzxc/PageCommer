@@ -61,8 +61,17 @@ import model21 from "/src/assets/img/Model-2.1.jpg";
 import Header from "./Header";
 import Footer from "./Footer";
 import Products from "./Products";
+import { useEffect, useState } from "react"; 
 
 const AllProducts = () => {
+  // const [django, setDjango] = useState(null);
+
+  useEffect(() => {
+    fetch("http://localhost:8000/api/hola/")
+    .then(response => response.json())
+    .then(data => console.log(data.mensaje)) 
+  })
+
   return (
     <div>
       <Header />
@@ -281,6 +290,7 @@ const AllProducts = () => {
               normalImg={model29}
             />
           </div>
+          .fetch()
         </div>
       </main>
       <Footer />
